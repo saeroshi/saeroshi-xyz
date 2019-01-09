@@ -1,0 +1,21 @@
+{% if site.social-share %}
+  <div class="social-share-wrapper">
+    <div class="social-share"></div>
+  </div>
+
+<!-- share.js -->
+<script src="/assets/js/social-share.min.js"></script>
+<script>
+  socialShare('.social-share', {
+    sites: [
+      {% for i in site.social-share-items %}
+        '{{ i }}'
+        {% if forloop.last == false %},
+        {% endif %}
+      {% endfor %}
+    ],
+    wechatQrcodeTitle: "Partager sur le cercle WeChat",
+    wechatQrcodeHelper: "J'ai hâte de voir cet article dans le cercle d'amis."
+  });
+</script>
+{% endif %}

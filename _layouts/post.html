@@ -1,0 +1,70 @@
+<!-- Post-Layout -->
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Header -->
+{% include head.html %}
+{% include androidColor.html %}
+</head>
+<body>
+
+<!-- GoTop -->
+<a id="htmlup" name="htmlup"></a>
+<!-- Posy-Header -->
+{% include post-header.html %}
+<!-- Mobile -->
+{% include boot.html %}
+<!-- Post-Style -->
+{% include post-title.html %}
+<div class="markdown-body fadeInUp animated">
+
+  {% if page.subtitle %}
+    {% if page.color.size==0 or page.color==nil %}
+      <div class="postpage-subtitle" style="border-left: 8px solid #9A85FF; border-right: 8px solid #9A85FF;">
+        {{ page.subtitle }}
+      </div>
+    {% else %}
+      <div class="postpage-subtitle" style="border-left: 8px solid {{ page.color }}; border-right: 8px solid {{ page.color }}">
+        {{ page.subtitle }}
+      </div>
+    {% endif %}
+  {% endif %}
+
+  <!-- Article -->
+  {{ page.content }}
+  <!-- Share -->
+  {% include share.html %}
+</div>
+
+<!-- GoDown -->
+<a id="htmldown" name="htmldown"></a>
+<!-- Comment -->
+{% include comment.html %}
+<!-- Goto -->
+{% include goto.html %}
+<!-- Footer -->
+{% include footer.html %}
+
+<!-- Animate wow.js -->
+<script src="/assets/js/wow.js"></script>
+<script>
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        // offset: 600,
+        mobile: true,
+        live: true
+    });
+    wow.init();
+</script>
+<!-- Refresh Page -->
+<script>
+    window.onbeforeunload = function(){
+        //Go Top After Refresh Page
+        document.documentElement.scrollTop = 0;  //ie下
+        document.body.scrollTop = 0;  //非ie
+    }
+</script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
