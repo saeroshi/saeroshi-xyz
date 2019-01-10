@@ -38,7 +38,7 @@ Ceux les plus importants sont : `ipconfig /all`, `ipconfig /release` et `ipconfi
 ### Utilisation
 `ipconfig [/allcompartments] [/all] [/renew [<Adapter>]] [/release [<Adapter>]] [/renew6[<Adapter>]] [/release6 [<Adapter>]] [/flushdns] [/displaydns] [/registerdns] [/showclassid <Adapter>] [/setclassid <Adapter> [<ClassID>]]`
 ### En Bref
-Vous pouvez aller voir la [doc](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ipconfig) aussi mais voici les commandes les plus importante :
+Vous pouvez aller voir la documentation [doc](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ipconfig) aussi mais voici les commandes les plus importantes :
 - `ipconfig /release [interface]` : Permet de libérer le bail en cours sur l'interface sélectionné.
 - `ipconfig /renew [interface]` : Permet de demander un nouveau bail sur l'interface sélectionné.
 > *NOTE : ipconfig étant déjà assez verbeux par defaut, aucune option de verbosité n'est disponible.*
