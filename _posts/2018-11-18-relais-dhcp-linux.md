@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Relais DHCP sous linux"
+title:  "Relais DHCP sous GNU/Linux"
 date: 2018-11-18 17:40:00
 tags:
 - sysadmin
@@ -20,7 +20,7 @@ Introduction
 ------------
 
 Pour effectuer le relay DHCP il y a un outils très connu qui ce nomme `dhcrelay`.
-Son principe est simple, il récupère les trame DHCP REQUEST et les renvoies a(ux) serveur(s) DHCP qui ce situe dans un autre réseau (les trâmes DHCP ne traverse pas les réseau *et heureusement*).
+Son principe est simple, il récupère les trame DHCP REQUEST et les renvoies a(ux) serveur(s) DHCP qui ce situe dans un autre réseau (les trames DHCP ne traversent pas les réseaux *et heureusement*).
 
 Utilisation
 -----------
@@ -57,12 +57,12 @@ dhcrelay -4 -i ens18 -i ens19 172.31.1.100 172.31.1.101
 
 #### Observation
 
-On peut voir que la commande n'est pas compliqué, il faut définir toutes les interfaces qui inteviendra dans le relais des trâmes DHCP ainsi que toutes les IP des serveurs DHCP.
+On peut voir que la commande n'est pas compliquée, il faut définir toutes les interfaces qui inteviendront dans le relais des trâmes DHCP ainsi que toutes les IP des serveurs DHCP.
 
 Exemple avec Debian
 -------------------
 
-J'aime bien prendre l'exemple avec cette distribiton car plus courament utlisé.
+J'aime bien prendre l'exemple avec cette distribiton car plus courament utlisée.
 Cahier des charges :
 - Le serveur joue le rôle de routeur
 - Il y a 2 serveurs DHCP 172.31.1.100 et 172.31.1.101
@@ -74,7 +74,7 @@ Ce serveur fera donc office de passrelle entre les 2 réseaux qui isole les clie
 Sous debian le paquet qui contient dhcrelay est `isc-dhcp-relay`
 > Pour rappel, pour installer un paquet : apt-get install **isc-dhcp-relay**
 
-Dans un premier temps nous devons autorisé le forwarding (le routage de paquets entre les interfaces), pour ça il y a 2 méthodes :
+Dans un premier temps nous devons autoriser le forwarding (le routage de paquets entre les interfaces), pour ça il y a 2 méthodes :
 - La méthode sale mais qui marche a coup sur : `echo 1 > /proc/sys/net/ipv4/ip_forward`
 - La méthode propre mais fonctionne pas partout : 
     - Il faut éditer le fichier `/etc/sysctl.conf` et décommenter/ajouter la ligne `net.ipv4.ip_forward=1`
@@ -95,12 +95,12 @@ Le service ce nomme `isc-dhcp-relay`, donc : `systemctl restart isc-dhcp-relay`
 Conclusion
 ----------
 
-La configuration du relay n'est pas spécialement compliqué. Mais une simple mauvaise config et ça marche pas.
+La configuration du relay n'est pas spécialement compliquée. Mais si la configuration ne tien pas la route, dhrelay ne ce plain pas beaucoup, cela ne fonctionnera juste pas.
 
 
-*Source :*
-- [https://www.isc.org/dhcp-manual-pages/](https://www.isc.org/dhcp-manual-pages/) - Doccumentation Officiel
+*Sources :*
+- [https://www.isc.org/dhcp-manual-pages/](https://www.isc.org/dhcp-manual-pages/) - Documentation Officielle
 - [https://manpages.debian.org/stretch/isc-dhcp-relay/dhcrelay.8.en.html](https://manpages.debian.org/stretch/isc-dhcp-relay/dhcrelay.8.en.html) - Man deban dhcrelay - FR
 - [http://www.delafond.org/traducmanfr/man/man8/dhcrelay.8.html](http://www.delafond.org/traducmanfr/man/man8/dhcrelay.8.html) - Man dhcrelay - FR
 - [https://linux.die.net/man/8/dhcrelay](https://linux.die.net/man/8/dhcrelay) - Man dhcrelay - EN
-- [https://doc.ubuntu-fr.org/isc-dhcp-server#relais_dhcp](https://doc.ubuntu-fr.org/isc-dhcp-server#relais_dhcp) - Doccumentation Ubuntu
+- [https://doc.ubuntu-fr.org/isc-dhcp-server#relais_dhcp](https://doc.ubuntu-fr.org/isc-dhcp-server#relais_dhcp) - Documentation Ubuntu

@@ -15,7 +15,7 @@ cover: '/assets/cover/hello.gif'
 Ce mémo servira à la configuration réseau de façon dynamique avec `ip` ou de façon statique sur diverses distributions.
 
 ## 1 - Configuration dynamique
-Anciennement net-tools (ifconfig, route, arp, etc.…) était le fournisseur pour les outils nécessaires à la configuration du réseau, mais celui-ci a été remplacé par iproute2, ce qui, à l'heure où j’écris ces lignes, rend obsolètes et deprecated net-tools.
+Anciennement net-tools (ifconfig, route, arp, etc...) était le fournisseur pour les outils nécessaires à la configuration du réseau, mais celui-ci a été remplacé par iproute2, ce qui, a l'heure ou j'écrit ces lignes, rend obselète et deprecated net-tools.
 
 Aujourd'hui c’est iproute2 le fournisseur pour les outils réseaux par défaut sur le majeur parti des distributions Lignux (GNU/Linux).
 
@@ -73,7 +73,7 @@ root@godai:~# ip route del default via 192.168.10.1 # Supprime cette même gatew
 root@godai:~# ip route add 192.168.1.0/24 via 192.168.10.254 dev ens33 # Ajoute une route pour le 192.168.1.0/24 vers 192.168.10.254 pour l'interface ens33
 ```
 
-## 2 - Configuration statique (plate-file)
+## 2 - Configuration statique (flatfile)
 Faire la configuration dynamique c'est bien pour faire les tests mais ça suffit pas en production…
 
 
@@ -110,8 +110,8 @@ iface ens18 inet static
     gateway 192.168.10.1
     dns-nameservers 9.9.9.9 1.1.1.1
 ```
-On a défini qu'on n'était pas en **dhcp** mais en **static**, en paramètre nous avons l'**address**, le **netmask et la **gateway**.
-Il y a un certain nombre de paramètres possible en plus, par exemple **dns-nameservers qui configure les resolvers DNS.
+On a défini que l'on était pas en **dhcp** mais en **static**, en paramettre nous avons l'**address**, le **netmask** et la **gateway**.
+Il y a un certain nombre de paramètres possibles en plus, par exemple **dns-nameservers** qui configure les resolvers DNS.
 
 2. ) Les options : Nous pouvons aussi ajouter des routes supplémentaires, par exemple pour notre route de tout à l'heure.
 ```
@@ -166,6 +166,6 @@ root@godai:~# ifup ens18 # Activer l'interface
 Avec tout ça vous avez les bases.
 
 
-*Source :*
+*Sources :*
 - [iproute2](https://linux.die.net/man/8/ip)
 - [Networking](https://wiki.debian.org/NetworkConfiguration)

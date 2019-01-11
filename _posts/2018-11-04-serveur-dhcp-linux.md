@@ -26,7 +26,7 @@ Prérequis
 
 Il y a quelques éléments à se mettre en tête quand on déploie un serveur DHCP :
 - c'est NOUS qui faisons office de DHCP; Il est assez bête de mettre en place un DHCP sur un réseau où il en existe déjà un.
-- Sauf cas particulier, la machine qui herbage le serveur DHCP doit avoir une configuration IP statique. Dans tous les cas l'interface qui est utilisée pour le DHCP doit avoir une IP statique.
+- Sauf cas particulier, la machine qui héberge le serveur DHCP doit avoir une configuration IP statique. Dans tous les cas l'interface utilisée pour le DHCP doit avoir une IP statique.
 Il ne sert à rien de suivre *bêtement* cet article sans comprendre, c'est juste contre-productif.
 
 Configurations
@@ -39,7 +39,7 @@ Attribution d'une IPv4 statique à l'interface que vous souhaitez utiliser. Ici 
 # ip link set ens18 up
 # ip address add 172.17.0.100/24 dev ens18
 ```
-Plus d'info, voir (Configuration réseau)[/2018/11/07/memo-config-reseau-linux.html]
+Plus d'info, voir [Configuration réseau](/2018/11/07/memo-config-reseau-linux.html)
 
 Le fichier de configuration se trouve dans `dhcpd.conf` *(peut différent selon la distribution utilisée)*.
 
@@ -97,7 +97,7 @@ subnet 172.17.0.0 netmask 255.255.255.0 {
 }
 ```
 Dans l'ordre :
-- **[primay | secondary];** : Déclare si le serveur est primaire ou secondaire.
+- **[primary | secondary];** : Déclare si le serveur est primaire ou secondaire.
 - **address** *address* : IP (ou nom DNS) d'écoute.
 - **port** *port* : Port d'écoute.
 - **peer address** *address* : IP (ou nom DNS) du second serveur.
@@ -217,7 +217,7 @@ Dans ce fichier de configuration il faut décommenter **DHCPDv4_CONF** et **INTE
 - DHCPDv4_CONF correspond au chemin d'accès au fichier de configuration de DHCPD.
 - INTERFACESv4 correspond à l'interface qui écoute les trames *DHCP DISCOVER*.
 
-Le service ce nomme `isc-dhcp-server`, donc : `systemctl restart isc-dhcp-server`
+Le service se nomme `isc-dhcp-server`, donc : `systemctl restart isc-dhcp-server`
 
 Conclusion
 ----------
@@ -226,7 +226,7 @@ Pour finir, la dernière chose est qu'il faut savoir se documenter. Je vous lais
 
 
 *Source :*
-- [https://www.isc.org/dhcp-manual-pages/](https://www.isc.org/dhcp-manual-pages/) - Doccumentation Officiel
+- [https://www.isc.org/dhcp-manual-pages/](https://www.isc.org/dhcp-manual-pages/) - Documentation Officielle
 - [http://www.delafond.org/traducmanfr/man/man8/dhcpd.8.html](http://www.delafond.org/traducmanfr/man/man8/dhcpd.8.html) - Man pour dhcpd - FR
 - [http://www.delafond.org/traducmanfr/man/man5/dhcpd.conf.5.html](http://www.delafond.org/traducmanfr/man/man5/dhcpd.conf.5.html) - Man pour dhcpd.conf - FR
 - [https://linux.die.net/man/5/dhcpd.conf](https://linux.die.net/man/5/dhcpd.conf) - Man pour dhcpd.conf - EN

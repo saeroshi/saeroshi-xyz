@@ -16,8 +16,8 @@ L'idée date de plusieurs années, elle est simple, un endroit où je peux docum
 
 Ah, petite chose avant de continuer, je suis une bille en {orthographe, conjugaison, grammaire} mais j’essaie de m’améliorer. Cependant, si cela est dérangeant et ne vous plaît pas, vous connaissez la croix rouge.
 
-Bon maintenant que tout est dit, je suis un être étrange tout droit sorti d'un vagin tout ce qu'il y a de plus normal. Avec une flemmardise sans équivalant (comme je fais ce blog, c'est que je ne dois pas avoir tant de flemme que ça), j'utilise le pseudonyme Saeroshi, on peut assez facilement retrouver mon Nom/Prénom mais je ne me citerais pas quand même.
+Bon maintenant que tout est dit, je suis un être étrange tout droit sorti d'un vagin tout ce qu'il y a de plus normal. Avec une flemmardise sans équivalant (comme je fais ce blog, c'est que je ne dois pas avoir tant de flemme que ça), j'utilise le pseudonyme Saeroshi, on peut assez facilement retrouver mon Nom/Prénom mais je ne me citerai pas quand même.
 
-À l'heure où j'écris cet article, je suis étudiant en alternance dans le but d'obtenir un BTS SIO (Services Informatiques aux Organisations), un certain nombre d'articles seront dédiés pour la réussite de ce BTS.
+À l'heure où j'écris cet article, je suis étudiant en alternance dans le but d'obtenir un BTS SIO (Services Informatiques aux Organisations), un certain nombre d'articles seront dédiés à la réussite de ce BTS.
 
 Bref...
