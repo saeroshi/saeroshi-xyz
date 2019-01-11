@@ -103,21 +103,18 @@ On voit 2 interfaces :
 
 1. ) La base : Si on veut configurer notre réseau, 192.168.10.10/24 avec une gateway 192.168.10.1 :
 ```
-.....
 auto ens18
 iface ens18 inet static
     address 192.168.10.10
     netmask 255.255.255.0
     gateway 192.168.10.1
     dns-nameservers 9.9.9.9 1.1.1.1
-.....
 ```
 On a défini qu'on n'était pas en **dhcp** mais en **static**, en paramètre nous avons l'**address**, le **netmask et la **gateway**.
 Il y a un certain nombre de paramètres possible en plus, par exemple **dns-nameservers qui configure les resolvers DNS.
 
 2. ) Les options : Nous pouvons aussi ajouter des routes supplémentaires, par exemple pour notre route de tout à l'heure.
 ```
-.....
 auto ens18
 iface ens18 inet static
     address 192.168.10.10
@@ -126,7 +123,6 @@ iface ens18 inet static
     dns-nameservers 9.9.9.9 1.1.1.1
     post-up ip route add 192.168.1.0/24 via 192.168.10.254 dev ens18
     pre-down ip route del 192.168.1.0/24 via 192.168.10.254 dev ens19
-.....
 ```
 
 3. ) Les Alias : Il est possible d'ajouter autant d'adresse supplémentaire que nécessaire.
